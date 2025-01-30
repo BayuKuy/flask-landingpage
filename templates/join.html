@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Digitech</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/join.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Join Us</h1>
+        <p>Bergabunglah dengan kami dan wujudkan desain impian Anda!</p>
+        <form action="{{ url_for('join') }}" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Nomor HP:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit">Daftar Sekarang</button>
+        </form>
+        <br>
+        <a href="{{ url_for('index') }}">Kembali ke Beranda</a>
+    </div>
+</body>
+</html>

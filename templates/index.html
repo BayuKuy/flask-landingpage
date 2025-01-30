@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile | Digitech University</title>
+    
+    <!-- CSS Lokal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lightbox/dist/css/lightbox.css') }}">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Remixicon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    
+
+
+
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar animate__animated animate__fadeInDown">
+        <div class="container">
+            <div class="box-navbar">
+                <div class="brand">
+                    <h1>Digitech</h1>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a href="#beranda">Beranda</a>
+                            <i class="fas fa-solid fa-home"></i>
+                        </li>
+                        <li><a href="#about">About Us</a>
+                            <i class="fas fa-solid fa-info-circle"></i></li>
+                        <li><a href="#gallery">Gallery</a>
+                            <i class="fas fa-solid fa-image"></i></li>
+                        <li><a href="#testimonial">Testimoni</a>
+                            <i class="fas fa-solid fa-person-circle-question"></i></li>
+                            <li><a href="{{ url_for('join') }}">Join Us</a>
+                                <i class="fas fa-solid fa-right-to-bracket"></i>
+                            </li>
+                            
+                    </ul>
+                    <i class="ri-close-line"></i>
+                </div>
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+    
+    <!-- hero -->
+    <div class="hero">
+        <div class="container">
+            <div class="box-hero">
+                <div class="box animate__animated animate__fadeInLeft">
+                    <h1>Apapun Desain nya Digitech Solusinya</h1>
+                    <p>Tingkatkan keindahan dan kenyamanan ruang Anda bersama kami, perusahaan desain interior terpercaya. Wujudkan hunian impian dengan konsep inovatif dan layanan profesional. Konsultasi sekarang</p>
+                    <button class="btn1">Detail About Us</button>
+                    <a href="{{ url_for('join') }}">
+                        <button class="btn2">Join With Us</button>
+                    </a>
+                    
+                </div>
+                <div class="box animate__animated animate__zoomIn">
+                    <img src="{{ url_for('static', filename='img/hero.jpeg') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <div class="box-about">
+                <div class="box animate__animated animate__fadeInRight">
+                    <img src="{{ url_for('static', filename='img/about1.jpeg') }}" alt="" class="image1">
+                    <img src="{{ url_for('static', filename='img/about2.jpeg') }}" alt="" class="image2">
+                    <img src="{{ url_for('static', filename='img/about3.jpeg') }}" alt="" class="image3">
+                    <img src="{{ url_for('static', filename='img/about4.jpeg') }}" alt="" class="image4">
+                </div>
+                <div class="box animate__animated animate__zoomInRight">
+                    <h1>About</h1>
+                    <p>
+                        Kami adalah perusahaan desain interior yang berkomitmen untuk menghadirkan solusi ruang yang estetis, fungsional, dan sesuai dengan kebutuhan Anda. Dengan tim desainer berpengalaman, kami menggabungkan kreativitas, detail, dan inovasi untuk menciptakan ruang yang mencerminkan karakter serta gaya hidup Anda. Mulai dari hunian pribadi hingga ruang komersial, kami hadir untuk mewujudkan visi Anda menjadi kenyataan. Kepuasan Anda adalah prioritas utama kami.
+                    </p>
+                    <button>Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- gallery -->
+    <div class="gallery">
+        <div class="container">
+            <div class="box-gallery">
+                <div class="box animate__animated animate__zoomInRight">
+                    <h1>Portfolio</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo impedit vel non praesentium saepe recusandae nulla doloribus corporis quam quidem!</p>
+                </div>
+                <div class="box animate__animated animate__zoomInRight">
+                    {% for i in range(1, 9) %}
+                    <a href="{{ url_for('static', filename='img/porto' ~ i ~ '.jpeg') }}" data-lightbox="gallery">
+                        <img src="{{ url_for('static', filename='img/porto' ~ i ~ '.jpeg') }}" alt="">
+                        <div class="bg-img">Lihat Gambar</div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- testimonial -->
+    <div class="testimonial">
+        <div class="container">
+            <div class="box-testimonial">
+                <div class="box animate__animated animate__zoomInRight">
+                    <h1>Testimonial</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, dolorem officiis autem soluta minima reiciendis!</p>
+                </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for t in testimonials %}
+                        <div class="swiper-slide">
+                            <p>{{ t.message }}</p>
+                            <h4>{{ t.name }}</h4>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <footer>
+        <p>&copy; Copyright 2025 Projek UAS</p>
+    </footer>
+    
+    <!-- Tambahkan referensi JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='lightbox/dist/js/lightbox-plus-jquery.js') }}"></script>
+    
+
+
+</body>
+</html>

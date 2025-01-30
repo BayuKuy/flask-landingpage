@@ -1,0 +1,92 @@
+/* Gaya dasar halaman */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container utama */
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Judul */
+h1 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Paragraf deskripsi */
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Label */
+label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Input field */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efek saat input aktif */
+input:focus {
+    border-color: #6a11cb;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(106, 17, 203, 0.5);
+}
+
+/* Tombol submit */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efek hover tombol 
